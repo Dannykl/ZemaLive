@@ -48,7 +48,7 @@ The app feeds data that comes from the API that I have created for this purpose.
 <h4>In addition:</h4>
 
 Retrofit is used to handle API<br>
-Glide is used to handle images from uri
-Reactivex
+Glide is used to handle images from uri<br>
+Reactive extension for asynchronous <br>
 
 

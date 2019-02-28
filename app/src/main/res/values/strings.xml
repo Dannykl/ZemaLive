@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Zema Live</string>
+    <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
+    <string name="search">Search</string>
+    <string name="info">Info</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_welcome">Welcome to Zema Live</string>
+    <string name="hint_input_password">Type password.....</string>
+    <string name="hint_input_email">Type email.....</string>
+</resources>

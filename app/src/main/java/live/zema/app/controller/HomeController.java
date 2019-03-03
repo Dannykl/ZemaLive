@@ -1,7 +1,5 @@
 package live.zema.app.controller;
 
-import android.util.Log;
-
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.functions.Function;
 import io.reactivex.observers.DisposableSingleObserver;
@@ -52,32 +50,6 @@ public class HomeController extends BaseUIController<HomeView> {
                     }
                 });
     }
-
-//    private List<SimpleItem> mapAlbums(List<AlbumResponse> listOfAlbums) {
-//
-//        List<SimpleItem> items = new ArrayList<>();
-//        List<String> genresList = new ArrayList<>();
-//        for (int i = 0; i < listOfAlbums.size(); i++) {
-//            AlbumList dm = new AlbumList();
-//            String cat = listOfAlbums.get(i).getGenres();
-//            dm.setCatagoryName(listOfAlbums.get(i).getGenres());
-//            List<AlbumResponse> singleAlbum = new ArrayList<AlbumResponse>();
-//            if (!genresList.contains(cat)) {
-//                for (int j = 0; j < listOfAlbums.size(); j++) {
-//                    genresList.add(cat);
-//                    if (listOfAlbums.get(j).getGenres().equals(cat)) {
-//                        singleAlbum.add(listOfAlbums.get(j));
-//                        dm.setListOfAlbums(singleAlbum);
-//                    }
-//
-//                }
-//                items.add(dm);
-//                Log.i("album>>>>>>> ", listOfAlbums.get(i).getAlbum_name());
-//            }
-//        }
-//
-//        return items;
-//    }
 
     private List<SimpleItem> mapAlbums(List<AlbumResponse> listOfAlbums) {
 

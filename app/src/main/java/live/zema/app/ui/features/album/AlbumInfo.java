@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import live.zema.app.R;
+import live.zema.app.ui.features.more.MoreActivity;
 import live.zema.app.ui.features.search.AlbumSearch;
 import live.zema.app.ui.adapters.PageAdapter;
 import live.zema.app.ui.features.home.HomeActivity;
@@ -28,10 +29,6 @@ public class AlbumInfo extends AppCompatActivity implements TabLayout.OnTabSelec
       protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_album_description);
-
-            //finding toobar and setting it support
-//            toolbar = (Toolbar) findViewById(R.id.toolbar);
-//            setSupportActionBar(toolbar);
 
             //find TabLayout and set tabs
             tabLayout = (TabLayout) findViewById(R.id.tablayout);
@@ -64,31 +61,22 @@ public class AlbumInfo extends AppCompatActivity implements TabLayout.OnTabSelec
             tabLayout.addOnTabSelectedListener(this);
 
 
-            //bottom menu navigation implementation
-            BottomNavigationView bottomNavView = findViewById(R.id.navigation);
-            bottomNavView.setOnNavigationItemSelectedListener(new BottomNavigationView
-                    .OnNavigationItemSelectedListener() {
+            BottomNavigationView bnv = findViewById(R.id.navigation);
+            bnv.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
 
                   @Override
                   public boolean onNavigationItemSelected(@NonNull final MenuItem item) {
                         int id = item.getItemId();
-                        if (id == R.id.navigation_home) {
-
-//                            Toast.makeText(AlbumInfo.this, "home is Clicked", Toast.LENGTH_LONG).show();
-                              Intent intent = new Intent(AlbumInfo.this, HomeActivity.class);
-                              startActivity(intent);
-
-                              return true;
-                        }
-                        if (id == R.id.navigation_search) {
-//                              Toast.makeText(AlbumInfo.this, "Search is Clicked", Toast.LENGTH_LONG).show();
-                              Intent intent = new Intent(AlbumInfo.this, AlbumSearch.class);
-                              startActivity(intent);
-                              return true;
-                        }
-                        if (id == R.id.navigation_more) {
-                              Toast.makeText(AlbumInfo.this, "menu is Clicked", Toast.LENGTH_LONG).show();
-                              return true;
+                        switch (id) {
+                              case R.id.navigation_home:
+                                    startActivity(new Intent(AlbumInfo.this,HomeActivity.class));
+                                    return true;
+                              case R.id.navigation_search:
+                                    startActivity(new Intent(AlbumInfo.this, AlbumSearch.class));
+                                    return true;
+                              case R.id.navigation_more:
+                                    startActivity(new Intent(AlbumInfo.this, MoreActivity.class));
+                                    return true;
                         }
                         return false;
                   }

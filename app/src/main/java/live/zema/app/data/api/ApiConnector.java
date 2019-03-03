@@ -17,7 +17,7 @@ public class ApiConnector {
       public static Retrofit getRetrofitInstance(Context context) {
             if (retrofit == null) {
                   OkHttpClient client = new OkHttpClient.Builder()
-                          .readTimeout(25L, TimeUnit.SECONDS)//more http configs here
+                          .readTimeout(25L, TimeUnit.SECONDS)//MoreActivity http configs here
                           .build();
                   retrofit = new Retrofit.Builder()
                           .baseUrl(AppConstants.BASE_URL)

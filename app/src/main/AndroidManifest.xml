@@ -28,7 +28,7 @@
         <activity android:name=".ui.features.home.HomeActivity" />
         <activity android:name=".ui.features.album.AlbumDetails" />
         <activity android:name=".ui.features.album.AlbumInfo" />
-        <activity android:name=".ui.features.more.more" />
+        <activity android:name=".ui.features.more.MoreActivity" />
         <activity android:name=".ui.features.search.AlbumSearch" />
     </application>
 

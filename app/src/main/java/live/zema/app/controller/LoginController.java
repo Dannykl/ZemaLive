@@ -21,18 +21,17 @@ public class LoginController extends BaseUIController<LoginView> {
         if(TextUtils.isEmpty(email)) {
             LoginView view = getView();
             if (view != null) {
-                view.onLoginResponse(false, "Email field is empty.");
+                view.onLoginResponse(true, "Email field is empty.");
             }
             return;
         }
         if(TextUtils.isEmpty(password)) {
             LoginView view = getView();
             if (view != null) {
-                view.onLoginResponse(false, "Password field is empty.");
+                view.onLoginResponse(true, "Password field is empty.");
             }
             return;
         }
-
         apiService.doLogin(email, password)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())

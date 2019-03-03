@@ -1,9 +1,12 @@
 package live.zema.app.data.api;
 
 
+import io.reactivex.Single;
+import live.zema.app.data.entity.AlbumList;
+import retrofit2.http.GET;
+
 public interface HeaderApiService
 {
-//      TODO: amend this
-//      @GET("/tune/api/album/header/")
-//      Call<NewAlbums> getAlbumData();
+      @GET("")
+      Single<AlbumList> getNewAlbumData();
 }

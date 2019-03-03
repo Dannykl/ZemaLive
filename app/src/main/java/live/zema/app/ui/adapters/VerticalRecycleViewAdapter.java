@@ -43,7 +43,8 @@ public class VerticalRecycleViewAdapter extends RecyclerView.Adapter<RecyclerVie
             vh = new ViewHolder(inflater.inflate(R.layout.vertical_albums_cat, viewGroup, false));
         } else {
             vh = new RecyclerView.ViewHolder(
-                    inflater.inflate(R.layout.home_header_layout, viewGroup, false)
+//                    inflater.inflate(R.layout.home_header_layout, viewGroup, false)
+                    inflater.inflate(R.layout.activity_flipper, viewGroup, false)
             ) {
             };
         }
@@ -95,7 +96,7 @@ public class VerticalRecycleViewAdapter extends RecyclerView.Adapter<RecyclerVie
             btnMore.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(v.getContext(), "click event on more, " + sectionName, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(v.getContext(), "click event on MoreActivity, " + sectionName, Toast.LENGTH_SHORT).show();
                 }
             });
         }

@@ -14,7 +14,7 @@ import live.zema.app.data.api.HomeApiService;
 import live.zema.app.signature.SimpleItem;
 import live.zema.app.ui.adapters.VerticalRecycleViewAdapter;
 import live.zema.app.ui.base.BaseActivity;
-import live.zema.app.ui.features.more.more;
+import live.zema.app.ui.features.more.MoreActivity;
 import live.zema.app.ui.features.search.AlbumSearch;
 
 import java.util.List;
@@ -37,11 +37,10 @@ public class HomeActivity extends BaseActivity implements HomeView {
                         int id = item.getItemId();
                         switch (id) {
                             case R.id.navigation_search:
-                                Intent intent = new Intent(HomeActivity.this, AlbumSearch.class);
-                                startActivity(intent);
+                                startActivity(new Intent(HomeActivity.this, AlbumSearch.class));
                                 return true;
                             case R.id.navigation_more:
-                                startActivity(new Intent(HomeActivity.this, more.class));
+                                startActivity(new Intent(HomeActivity.this, MoreActivity.class));
                                 return true;
                         }
                         return false;

@@ -8,10 +8,11 @@ import android.widget.TextView;
 
 import live.zema.app.R;
 import live.zema.app.data.model.AppConstants;
+import live.zema.app.ui.base.BaseActivity;
 import live.zema.app.ui.features.login.LoginActivity;
 import live.zema.app.ui.features.login.LoginView;
 
-public class more extends AppCompatActivity implements LoginView{
+public class MoreActivity extends BaseActivity implements LoginView{
 
       private TextView logout;
       @Override
@@ -24,16 +25,21 @@ public class more extends AppCompatActivity implements LoginView{
                   @Override
                   public void onClick(View v) {
                         onLoginResponse(false, AppConstants.LOGGED_OUT);
-
                         //route to home page....
-                        startActivity(new Intent(more.this, LoginActivity.class));
+                        startActivity(new Intent(MoreActivity.this, LoginActivity.class));
                         finish();
                   }
             });
       }
 
       @Override
-      public void onLoginResponse(boolean success, String message) {
-
+      public void onLoginResponse(boolean isLoggedIn, String message) {
+            if(!isLoggedIn)
+            {
+                  storeBool(AppConstants.LOGGED_IN_PREF, false);
+            }else {
+                  showToast(message);//more options to handle error
+            }
       }
+
 }

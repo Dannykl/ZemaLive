@@ -34,17 +34,6 @@ public class SignupActivity extends BaseActivity implements SignupView {
         setContentView(R.layout.sign_up);
         resetting();
 
-//        OkHttpClient client = new OkHttpClient.Builder()
-//                .readTimeout(25L, TimeUnit.SECONDS)//more http configs here
-//                .build();
-//
-//        Retrofit retrofit = new Retrofit.Builder()
-//                .baseUrl(AppConstants.BASE_URL)
-//                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-//                .addConverterFactory(GsonConverterFactory.create())
-//                .client(client)
-//                .build();
-//        SignupApiService service = retrofit.create(SignupApiService.class);
         SignupApiService service = ApiConnector.getRetrofitInstance(getApplicationContext()).create(SignupApiService.class);
         signupController = new SignupController(this, service);
 
@@ -52,6 +41,13 @@ public class SignupActivity extends BaseActivity implements SignupView {
             @Override
             public void onClick(View v) {
                 signupController.doSignup(getValue(firstName), getValue(lastName), getValue(emailAddress), getValue(password));
+            }
+        });
+
+        logIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SignupActivity.this,LoginActivity.class));
             }
         });
     }
@@ -65,7 +61,7 @@ public class SignupActivity extends BaseActivity implements SignupView {
             startActivity(new Intent(this, LoginActivity.class));
             finish();
         } else {
-            showToast(message);//more options to handle error
+            showToast(message);//MoreActivity options to handle error
         }
     }
 

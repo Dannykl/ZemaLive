@@ -6,7 +6,7 @@ import retrofit2.http.GET;
 
 public interface HomeApiService {
 
-    @GET("/tune/api/album/")
+    @GET("")
     Single<AlbumList> getAlbumData();
 
 //      @GET("/tune/api/album/")

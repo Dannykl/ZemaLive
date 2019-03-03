@@ -8,7 +8,7 @@ import retrofit2.http.POST;
 
 public interface SignupApiService {
       @FormUrlEncoded
-      @POST("/tune/api/album/signup.php")
+      @POST("")
       Single<LoginAndSignupResponse> doSignup(@Field("firstName") String firstName, @Field("lastName") String lastName,
                                               @Field("email") String email, @Field("password") String password);
 }

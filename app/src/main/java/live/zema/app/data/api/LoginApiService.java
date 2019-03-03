@@ -9,7 +9,7 @@ import retrofit2.http.POST;
 public interface LoginApiService {
 
     @FormUrlEncoded
-    @POST("/tune/api/album/login.php")
+    @POST("")
     Single<LoginAndSignupResponse> doLogin(@Field("email") String email,
                                            @Field("password") String password
     );

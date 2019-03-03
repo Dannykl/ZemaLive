@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import live.zema.app.R;
 import live.zema.app.data.api.ApiConnector;
@@ -27,17 +28,6 @@ public class LoginActivity extends BaseActivity implements LoginView {
 
         inputEmail = findViewById(R.id.text_login_email);
         inputPassword = findViewById(R.id.text_login_password);
-
-//        OkHttpClient client = new OkHttpClient.Builder()
-//                .readTimeout(25L, TimeUnit.SECONDS)//more http configs here
-//                .build();
-//
-//        Retrofit retrofit = new Retrofit.Builder()
-//                .baseUrl(AppConstants.BASE_URL)
-//                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-//                .addConverterFactory(GsonConverterFactory.create())
-//                .client(client)
-//                .build();
 
         LoginApiService service = ApiConnector.getRetrofitInstance(getApplicationContext()).create(LoginApiService.class);
         loginController = new LoginController(this, service);
@@ -80,7 +70,7 @@ public class LoginActivity extends BaseActivity implements LoginView {
             startActivity(new Intent(this, HomeActivity.class));
             finish();
         } else {
-            showToast(message);//more options to handle error
+            showToast(message);//MoreActivity options to handle error
         }
     }
 }

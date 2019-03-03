@@ -4,5 +4,5 @@ import live.zema.app.ui.base.UIView;
 
 public interface LoginView extends UIView {
 
-    void onLoginResponse(boolean success, String message);
+    void onLoginResponse(boolean error, String message);
 }
